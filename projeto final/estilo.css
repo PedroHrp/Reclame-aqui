@@ -1,0 +1,419 @@
+/* ---------------------LAYOUT ----------------------- */
+
+html, body, .capa, .box-tabela, .emp-profile{
+	height: 100%;
+	overflow: auto;
+}
+
+body{
+	background: url('imagens/capa.png') ,
+				url('imagens/ruido.png'),
+				linear-gradient(45deg, #1e5799 1%,#81c5ef 100%);
+	background-attachment: fixed; 
+	font-family: Helvetica, Arial, Sans-serif;
+}
+
+.hidden{
+	display: none;
+}
+/* -- barra de navegação -- */
+/*.img-logo{
+	height: 40px;
+	width: 132px;
+	background: url('imagens/favicon.svg') no-repeat;
+	display: block;
+	background-size: contain;
+	color: transparent;
+}*/
+
+nav.navbar-transparente{
+	padding: 15px 0px;
+	background: rgba(0,0,0, 0.6); /* -- transparencia -- */
+	border: none;
+}
+
+.navbar-brand{
+	padding: 5px 15px; 
+}
+
+.navbar-inverse .navbar-nav>li>a, #rodape .nav a{ /* -- pega o primeiro filho da tag -- */
+	color: white;
+	background: none;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, #rodape .nav a:hover{ /* -- pega o primeiro filho da tag -- */
+	color: #9bf0e1;
+}
+
+/* -- Imagem de capa -- */
+
+.capa{
+	display: table;
+	width: 100%;
+}
+
+.texto-capa{
+	text-align: center;
+	color: white;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/* -- Botoes capa -- */
+
+.btn-custom{
+	color: white;
+	border-radius: 500px;
+	-webkit-border-radius:500px;
+	-moz-border-radius:500px;
+	text-transform: uppercase; 
+	transition: background 0.4s, color 0.4s;
+}
+
+.btn-azul{
+	background: #3366ff;
+}
+
+.btn-azul:hover{
+	background-color: #002080;
+	color: white;
+}
+
+.btn-branco{
+	border: 2px solid white;
+}
+
+.btn-branco:hover{
+	background-color: white;
+	color: black;
+}
+
+/* -- secao de serviço -- */
+#servicos{
+	background: white;
+	padding: 20px 20px;
+}
+
+.albuns{
+	padding: 15px 10px 10px 10px;
+}
+
+
+/* -- Rodape-- */
+
+footer{
+	background: #000;
+	padding: 50px 0px 20px 0px;
+	position: relative;
+	text-align: center;
+}
+
+.item-rede-social{
+	float: center;
+}
+
+/* --------------------- Cadastro conteudo ----------------------- */
+
+#cadastro{
+	background-color: white;
+	border: 10%;
+	margin: 10% 5%;
+	padding: 20px 10px;
+	border-radius: 50px;
+	-webkit-border-radius:50px;
+	-moz-border-radius:50px;
+}
+.btn-cadastrar{
+	background: #3366ff;
+}
+.btn-cadastrar:hover{
+	background-color: #002080;
+	color: white;
+}
+
+/* --------------------- Minha conta conteudo ----------------------- */
+
+/* conta container */
+.conta {
+  margin: 10%;
+  margin-left: 1%;
+  margin-right: 1%;
+
+}
+
+/* conta sidebar */
+.conta-sidebar {
+  padding: 20px 0 60px 0;
+  background: #fff;
+    border-radius: 5px;
+	-webkit-border-radius:50px;
+	-moz-border-radius:50px;
+}
+
+/*.conta-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}*/
+
+.conta-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.conta-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.conta-usertitle-email {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.conta-usermenu {
+  margin-top: 30px;
+}
+
+.conta-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+  border-radius: 5px;
+	-webkit-border-radius:50px;
+	-moz-border-radius:50px;
+}
+
+.conta-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.conta-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.conta-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.conta-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.conta-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.conta-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* conta conteudo */
+.conta-conteudo {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+  border-radius: 20px;
+	-webkit-border-radius:50px;
+	-moz-border-radius:50px;
+}
+
+/* --------------------- Cadastro Problema ----------------------- */
+
+#cadastro-problema, #minha-conta{
+/*	border: 1px solid red;
+*/	padding: 5% 5% 0% 5%;
+	margin: 5px 5px 0px 5px;
+	align-items: center;
+	color: #00008B;
+}
+
+.conteudo-cadastroproblema, .conteudo-minhaconta{
+	margin-top: 15px;
+	padding: 5px 5px 0px 5px;
+}
+
+.linha{
+	height:2px;
+	border:none; 
+	color: #00008B; 
+	background-color:#00008B; 
+	margin-top: 0px; 
+	margin-bottom: 0px;
+}
+
+/* --------------------- Entrar conteudo ----------------------- */
+
+/*#login{
+	border: 1px solid red;
+}*/
+
+/* --------------------- Tabela conteudo ----------------------- */
+
+.box-tabela{
+	display: table;
+	width: 100%;
+}
+.tabela-conteudo{
+	text-align: justify;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#tb-reclamacoes{
+/*	border: 1px solid red;*/
+	background-color: white;
+	border-radius: 15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:50px;
+	margin: 0% 50% 0% 2%;
+}
+/* --------------------- Detalhes modal ----------------------- */
+
+.detalhes-container{
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,.5);
+	position: fixed;
+	top:0px;
+	left:0px;
+	z-index: 2000;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.detalhes{
+	background: white;
+	width: 40%;
+	min-width: 300px;
+	padding: 40px;
+	border-radius: 15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:50px;
+	margin-left: 25%;
+	margin-top: 15%;
+}
+
+.btn-fechar{
+	position: absolute;
+	top: -30px;
+	right: -30px;
+	width: 50px;
+	height: 50px;
+}
+
+#div-busca{
+	margin-bottom: 5px; 
+	padding: 3px;
+}
+	
+/* --------------------- Tipografia ----------------------- */
+
+h1{
+	font-size: 90px;
+	font-weight: 600;
+	letter-spacing: -0.04em;
+	margin-bottom: 40px;
+}
+
+/* Media Queries*/
+/* xs < 768 */
+@media screen and (max-width: 767px){
+	h1{
+		font-size: 50px;
+	}
+	.btn-custom, {
+		margin: 10px 15px;
+	}
+	.detalhes{
+		margin-left: 5%;
+	}
+}
+
+/* sm */
+@media screen and (min-width: 768px){
+	h1{
+		font-size: 60px;
+	}
+
+}
+/* md */
+@media screen and (min-width: 992px){
+	h1{
+		font-size: 80px;
+	}
+}
+/* lg */
+@media screen and (min-width: 1200px){
+	h1{
+		font-size: 100px;
+	}.btn-custom{
+		margin: 50px 15px;
+	}
+}
+
+h2{
+	font-size: 40px;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+	text-align: justify;
+}
+
+h3{
+	font-size: 25px;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+}
+
+#cadastro h1{
+	color: #002080;
+	font-size: 40px;
+}
+#cadastro label, #cadastro-problema label{
+	color: #002080
+}
+
+#login h3{
+	color: #002080;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+#login label{
+	color: #002080;
+}
+
+#rodape h4{
+	color: #919469;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+p{
+	text-align: justify;
+}
+
+#servicos h2, #servicos h3{
+	color: #002080;
+}
+
+.detalhes h3, .detalhes label{
+	justify-content: center;
+	text-align: center;
+	color: #002080;
+}
+

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+	<title>Minha conta</title> 
+	<link rel="icon" type="imagens/favicon.png" href="">
+	<meta charset="utf-8">   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Ajax -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Firebase/ AUT -->
+	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+	<script type="text/javascript" src="scripts/aut/env.js"></script>
+	<script type="text/javascript" src="scripts/aut/procedures.js"></script>
+    <!-- Bootstrap -->
+    <link href="scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS -->
+    <link href="estilo.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- JavaScript -->
+    <script type="text/javascript" src="scripts/js/app.js"></script>
+    <!-- Google -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</head>
+<body>
+
+	<header>
+
+		<div id="user-nav">
+		<nav  class="navbar navbar-fixed-top navbar-inverse navbar-transparente">
+  			<div class="container">
+
+  				<!-- header -->
+  				<div class="navbar-header">	
+
+  					<!-- botao toggle -->
+  					<button type="button" class="navbar-toggle collapsed"
+  							data-toggle="collapse" data-target="#barra-navegacao">
+  						<span class="sr-only">alternar navegação</span>
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  					</button>
+
+ 					<a href="index.html" class="navbar-brand">
+ 					<span class="img-logo">Reclame Campinas</span>
+ 					</a>
+
+  				</div>
+  				<!-- navbar -->
+  				<div class="collapse navbar-collapse" id="barra-navegacao">
+  					<ul class="nav navbar-nav navbar-right">
+  						<li><a href="todas-reclamacoes.html">Todas reclamações</a></li>
+  						<li><a href="inscricao.html">Inscrever-se</a></li>
+  						<li><a data-toggle="modal" data-target="#myModal">Entrar</a></li>
+  					</ul>
+  				</div>
+  			</div> <!-- /container -->
+  		</nav><!-- /nav user -->
+		</div>
+  		
+		<div id="login-nav">
+		<nav class="navbar navbar-fixed-top navbar-inverse navbar-transparente">
+  			<div class="container">
+
+  				<!-- header -->
+  				<div class="navbar-header">	
+
+  					<!-- botao toggle -->
+  					<button type="button" class="navbar-toggle collapsed"
+  							data-toggle="collapse" data-target="#barra-navegacao">
+  						<span class="sr-only">alternar navegação</span>
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  					</button>
+
+ 					<a href="index.html" class="navbar-brand">
+ 					<span class="img-logo">Reclame Campinas</span>
+ 					</a>
+
+  				</div>
+  				<!-- navbar -->
+  				<div class="collapse navbar-collapse" id="barra-navegacao">
+  					<ul class="nav navbar-nav navbar-right">
+  						<li><a href="todas-reclamacoes.html">Todas reclamações</a></li>
+  						<li><a href="#">Minha conta</a></li>
+  						<li><a onclick="logoffUser();" href="#">Sair</a></li>
+  					</ul>
+  				</div>
+  			</div> <!-- /container -->
+  		</nav><!-- /nav user -->
+		</div>
+	</header>
+
+	<!-- Conteudo -->
+
+	<article class="container">
+    <div class="row conta">
+		<section class="col-md-3">
+			<div class="conta-sidebar">
+				<!-- SIDEBAR USERPIC -->
+<!-- 				<div class="conta-userpic">
+					<img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/conta/conta_user.jpg" class="img-responsive" alt="">
+				</div>
+ -->				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="conta-usertitle">
+					<label id="nome-usuario" class="conta-usertitle-name">Nome Usuario</label></br>
+					<label id="email-usuario" class="conta-usertitle-email">Email</label>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR MENU -->
+				<div class="conta-usermenu">
+					<ul class="nav">
+						<li class="active">
+							<a onclick="exibirElementoNovoProblema();">
+							<i class="glyphicon glyphicon-envelope"></i>
+							Novo problema </a>
+						</li>
+						<li>
+							<a onclick="exibirElementoMinhaConta();">
+							<i class="glyphicon glyphicon-user"></i>
+							Minha conta </a>
+						</li>
+						<li>
+							<a onclick="exibirElementoTodosProblemas();">
+							<i class="glyphicon glyphicon-th-list"></i>
+							Todos problemas </a>
+						</li>
+						<li>
+							<a onclick="exibirElementoAjuda();">
+							<i class="glyphicon glyphicon-flag"></i>
+							Ajuda</a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</section>
+		<!-- CONTEUDO MINHA CONTA -->
+		<section class="col-md-9">
+            <div class="conta-conteudo">
+
+            	<!-- NOVO PROBLEMA TAB -->
+            	<section id="cadastro-problema">
+            		<div class="titulos-minhaconta">
+            			<h2>Cadastrar Problema</h2>
+            		</div>
+            		<hr class="linha" "/>
+            		<div class="conteudo-cadastroproblema">
+            			<form>
+            				<div class="form-group row">
+								<label for="example-text-input" class="col-2 col-form-label">Descrição: </label>
+								<div class="col-10">
+									<textarea rows="3"  class="form-control" cols="50"id="descricao-problema"></textarea>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="example-email-input" class="col-2 col-form-label">Endereço: </label>
+								<div class="col-10">
+								    <input class="form-control" type="email" id="end-problema">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="example-email-input" class="col-2 col-form-label">Imagem: </label>
+								<div class="col-10">
+								    <input class="form-control file-upload-input" type="file" 
+								    onchange="readURL(this);" accept="image/*" id="img-problema">
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-md-8"></div>
+  								<div class="col-md-4">
+									<button type="button" class="btn btn-custom btn-azul btn-lg" onclick="cadastrarProblema();">Cadastrar</button>
+								</div>
+							</div>
+            			</form>
+            		</div>
+            	</section>
+            	<!-- END NOVO PROBLEMA TAB -->
+            	<!-- MINHA CONTA TAB -->
+            	<section id="minha-conta">
+            		<div>
+            			<h2>Minha Conta</h2>
+            		</div>
+            		<hr class="linha" />
+            		<div class="conteudo-minhaconta">
+            			<form>
+            				<div class="form-group row">
+								<label for="example-text-input" class="col-2 col-form-label">Nome: </label>
+								<div class="col-10">
+								    <input class="form-control" type="text" id="nome-minhaconta">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="example-email-input" class="col-2 col-form-label">Email: </label>
+								<div class="col-10">
+								    <input class="form-control" type="email" id="email-minhaconta">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="example-text-input" class="col-2 col-form-label">Profissão: </label>
+								<div class="col-10">
+								    <input class="form-control" type="text" id="profissao-minhaconta">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="example-tel-input" class="col-2 col-form-label">Telefone:</label>
+								<div class="col-10">
+								    <input class="form-control" type="tel" id="telefone-minhaconta">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="example-password-input" class="col-2 col-form-label">Senha:</label>
+								<div class="col-10">
+								    <input class="form-control" type="password" id="senha-minhaconta">
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-md-8"></div>
+  								<div class="col-md-4">
+									<button type="button" class="btn btn-custom btn-azul btn-lg" onclick="">Salvar</button>
+								</div>
+							</div>	
+            			</form>
+            		</div>
+            	</section>
+            	<!-- END MINHA CONTA TAB -->
+            	<!-- LISTA PROBLEMAS TAB -->
+            	<section id="lita-problemas-minha-conta">
+            		<div>
+            			<h2>Problemas cadastrados</h2>
+            		</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="border border-primary">
+								<button class="btn btn-success" onclick="listarProblemasUsuario();">Carregar</button>
+								<table class= "table table-striped table-responsive-sm btn-table">
+									<thead>
+										<tr>
+											<th class="th-sm">Descrição do problema</th>
+											<th class="th-sm">Local</th>
+											<th class="th-sm">Status</th>
+											<th class="th-sm"></th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+						</div>
+					</div>
+            	</section>
+            	<!-- END LISTA PROBLEMAS TAB -->
+            	<!-- AJUDA TAB -->
+            	<section id="ajuda">
+            		Ajuda do usuario
+            	</section>
+            	<!-- END AJUDA TAB -->
+            </div>
+		</section>
+	</div> <!-- row -->
+	</article>
+	<br>
+	<br>
+
+	<!-- Rodape -->
+	<footer id="rodape">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-2">
+					<a href="index.html" class="navbar-brand">
+ 					<span class="img-logo">Reclame Campinas</span></br>
+ 					</a>
+				</div>
+
+				<div class="col-md-2">
+					<h4>Mapa da Página</h4>
+					<ul class="nav">
+  						<li><a href="todas-reclamacoes">Todas reclamações</a></li>
+  						<li><a href="inscricao.html">Inscrever-se</a></li>
+  						<li><a data-toggle="modal" data-target="#myModal">Entrar</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-4">
+					<h4>Autores/Desenvolvedores</h4>
+					<ul class="nav">
+  						<li><a href="">Pedro Henrique RA: 165047-5</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-4">
+					<ul class="nav">
+  						<li class="item-rede-social"><a href="#"><img src="imagens/facebook.png"></a></li>
+  						<li class="item-rede-social"><a href="#"><img src="imagens/instagram.png"></a></li>
+  						<li class="item-rede-social"><a href="#"><img src="imagens/twitter.png"></a></li>
+					</ul>
+				</div>
+				
+			</div><!-- /row -->
+		</div>
+	</footer>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="scripts/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
